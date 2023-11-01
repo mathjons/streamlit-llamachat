@@ -13,6 +13,11 @@
 # limitations under the License.
 
 import streamlit as st
+from llama_index import VectorStoreIndex, ServiceContext, Document
+from llama_index.llms import OpenAI
+import openai
+from llama_index import SimpleDirectoryReader
+
 from streamlit.logger import get_logger
 
 LOGGER = get_logger(__name__)
@@ -50,12 +55,6 @@ def run():
 if __name__ == "__main__":
     run()
 
-
-import streamlit as st
-from llama_index import VectorStoreIndex, ServiceContext, Document
-from llama_index.llms import OpenAI
-import openai
-from llama_index import SimpleDirectoryReader
 
 openai.api_key = st.secrets.openai_key
 st.header("Chat with the Streamlit docs 💬 📚")
